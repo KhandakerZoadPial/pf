@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-4">
+    <h4>Projects</h4>
+</div>
+<br>
+
+<div class="container">
+    <div class="card-deck">
+        {% for p in projects %}
+
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">{{p.name}}</h5>
+                <p class="card-text">{{p.desc}}</p>
+                {% if p.link %}
+                <a href="{{p.link}}" class="btn btn-primary">Visit</a>
+                {% endif %}
+            </div>
+        </div>
+
+
+        <br>
+        {% endfor %}
+    </div>
+
+
+{% endblock content %}
